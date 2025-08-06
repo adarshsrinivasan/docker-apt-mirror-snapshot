@@ -27,12 +27,10 @@ fi" >> /etc/bash.bashrc;
 
 COPY [ "assets", "/tmp/assets" ]
 
-RUN ls -l /tmp/assets
-
 # Configure apt-mirror
 RUN set -eux; \
  apt -y --no-install-recommends install apt-mirror \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+ && rm -rf /var/lib/apt/lists/* /var/tmp/* \
  && mv /etc/apt/mirror.list /etc/apt/mirror.list.default \
  && mv /tmp/assets/mirror.list /etc/apt/mirror.list
 
