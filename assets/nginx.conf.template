@@ -1,0 +1,12 @@
+server_names_hash_bucket_size 64;
+server_tokens off;
+
+server {
+  listen 80 default_server;
+  server_name _;
+
+  root /opt;
+  location / {
+    autoindex on;
+  }
+}
