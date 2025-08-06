@@ -27,6 +27,8 @@ fi" >> /etc/bash.bashrc;
 
 COPY [ "assets", "/tmp/assets" ]
 
+RUN ls -l /tmp/assets
+
 # Configure apt-mirror
 RUN set -eux; \
  apt -y --no-install-recommends install apt-mirror \
@@ -35,7 +37,6 @@ RUN set -eux; \
  && mv /tmp/assets/mirror.list /etc/apt/mirror.list
 
 # Configure Nginx
-ENV NGINX_CLIENT_MAX_BODY_SIZE=100M
 RUN  set -eux; \
   apt -q update && apt -y install nginx && apt clean; \
   rm /etc/nginx/sites-enabled/* \
