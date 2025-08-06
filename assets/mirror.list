@@ -34,4 +34,5 @@ deb-arm64 http://security.debian.org/debian-security bookworm-security main cont
 deb-armhf http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
 ############# bookworm start ###############
 
-clean
+clean http://deb.debian.org/debian
+clean http://security.debian.org/debian-security
