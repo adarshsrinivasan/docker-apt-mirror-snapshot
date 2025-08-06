@@ -15,6 +15,7 @@ RUN set -eux; \
     wget \
     cron \
     nano \
+    gettext-base \
     rng-tools; \
   apt clean && apt autoclean && apt autoremove; \
   echo "if ! shopt -oq posix; then\n\
