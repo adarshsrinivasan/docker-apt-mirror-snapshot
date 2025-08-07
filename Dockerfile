@@ -31,18 +31,20 @@ RUN set -eux; \
   fi\n\
 fi" >> /etc/bash.bashrc;
 
-COPY [ "assets", "/tmp/assets" ]
+WORKDIR /apt-mirror
+
+COPY [ "assets", "/apt-mirror" ]
 
 # Configure apt-mirror
 
-RUN install -m 755 -D /tmp/assets/apt-mirror /usr/local/bin/apt-mirror \
+RUN install -m 755 -D apt-mirror /usr/local/bin/apt-mirror \
     && mkdir -p /usr/local/share/man/man1/ \
-	&& pod2man /tmp/assets/apt-mirror  > /usr/local/share/man/man1/apt-mirror.1 \
+	&& pod2man apt-mirror  > /usr/local/share/man/man1/apt-mirror.1 \
 	&& mkdir -p /var/spool/apt-mirror/mirror \
 	&& mkdir -p /var/spool/apt-mirror/skel \
 	&& mkdir -p /var/spool/apt-mirror/var \
     && mkdir -p /etc/apt/ \
-    && mv /tmp/assets/mirror.list /etc/apt/mirror.list
+    && mv mirror.list /etc/apt/mirror.list
 
 # Configure Nginx
 RUN  set -eux; \
@@ -56,9 +58,6 @@ RUN  set -eux; \
 RUN mv /tmp/assets/supervisord.web.conf /etc/supervisor/conf.d/web.conf
 RUN mv /tmp/assets/*.sh /opt/
 
-# Clean up
-RUN rm -r /tmp/assets;
-
 # Declare ports in use
 EXPOSE 80 8080
 
@@ -69,4 +68,3 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 # Start supervisord when container starts
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
 
-WORKDIR /opt
