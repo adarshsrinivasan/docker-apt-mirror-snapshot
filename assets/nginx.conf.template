@@ -5,8 +5,8 @@ server {
   listen 80 default_server;
   server_name _;
 
-  root /var/spool/apt-mirror;
-  location /snapshot {
+  root /var/spool/apt-mirror/snapshot;
+  location / {
     autoindex on;
   }
 }
