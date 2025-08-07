@@ -21,11 +21,9 @@ SUB_DIRS=("dists" "pool")
 prepare_snapshot() {
     echo "Preparing snapshot directory..."
     for target in "${TARGET_REPOS[@]}"; do
-        if [ -d "$base_src$target" ]; then
-            for sub_dir in "${SUB_DIRS[@]}"; do
-                mkdir -p "$SNAPSHOT_PATH/$target/$TIMESTAMP/$sub_dir"
-            done
-        fi
+        for sub_dir in "${SUB_DIRS[@]}"; do
+            mkdir -p "$SNAPSHOT_PATH/$target/$TIMESTAMP/$sub_dir"
+        done
     done
 }
 
