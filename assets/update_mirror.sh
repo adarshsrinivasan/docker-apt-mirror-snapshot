@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This script updates the apt-mirror and creates a snapshot of the repositories.
+# It prepares the snapshot directory structure and copies the contents of the mirror to the snapshot.
+# The snapshot is timestamped and a symlink to the latest snapshot is created.
+# Usage: ./update_mirror.sh
+# The script assumes that the apt-mirror is already configured and the necessary directories exist.   
+
 # Set the base path
 BASE_PATH="/var/spool/apt-mirror"
 MIRROR_SRC_PATH="$BASE_PATH/mirror"
@@ -30,13 +36,35 @@ create_snapshot() {
 
         for target in "${TARGET_REPOS[@]}"; do
             if [ -d "$base_src$target" ]; then
-                
-            else
-                echo "  ✘ Missing: $target"
+                for sub_dir in "${SUB_DIRS[@]}"; do
+                    cp -al "$base_src$target/$sub_dir/"* "$SNAPSHOT_PATH/$target/$TIMESTAMP/$sub_dir/"
+                done
             fi
         done
     done
+    ln -sf "$SNAPSHOT_PATH/$target/$TIMESTAMP" "$SNAPSHOT_PATH/$target/latest"
 }
 
+update_mirror() {
+    echo "Updating mirror..."
+    apt-mirror
+    if [ $? -ne 0 ]; then
+        echo "Error updating mirror. Exiting."
+        exit 1
+    fi
+    prepare_snapshot
+    create_snapshot
+    echo "Mirror updated successfully."
+}
+
+main () {
+    if [ ! -d "$MIRROR_SRC_PATH" ]; then
+        echo "Mirror source path does not exist: $MIRROR_SRC_PATH"
+        exit 1
+    fi
+
+    update_mirror
+}
+main "$@"
 
 
