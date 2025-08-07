@@ -37,7 +37,7 @@ COPY [ "assets", "/tmp/assets" ]
 
 RUN install -m 755 -D /tmp/assets/apt-mirror /usr/local/bin/apt-mirror \
     && mkdir -p /usr/local/share/man/man1/ \
-	&& pod2man apt-mirror > /usr/local/share/man/man1/apt-mirror.1 \
+	&& pod2man /tmp/assets/apt-mirror  > /usr/local/share/man/man1/apt-mirror.1 \
 	&& mkdir -p /var/spool/apt-mirror/mirror \
 	&& mkdir -p /var/spool/apt-mirror/skel \
 	&& mkdir -p /var/spool/apt-mirror/var \
