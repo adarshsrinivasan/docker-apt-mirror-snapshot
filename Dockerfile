@@ -21,6 +21,7 @@ RUN set -eux; \
     gcc \
     make \
     perl \
+    bzip2 \
     rsync; \
   apt clean && apt autoclean && apt autoremove; \
   echo "if ! shopt -oq posix; then\n\
