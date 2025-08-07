@@ -8,6 +8,6 @@
 
 RECORD=$(echo -n "${USER}:" && echo "${PASS}" | openssl passwd -apr1 -stdin)
 
-echo ${RECORD} | tee -a /opt/aptly/api.htpasswd \
-    && echo "User & pass has added to /opt/aptly/api.htpasswd" \
+echo ${RECORD} | tee -a /apt-mirror/api.htpasswd \
+    && echo "User & pass has added to /apt-mirror/api.htpasswd" \
     || echo "Something has gone wrong"

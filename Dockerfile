@@ -51,19 +51,18 @@ RUN  set -eux; \
   apt -q update && apt -y install nginx && apt clean; \
   rm /etc/nginx/sites-enabled/* \
     && mkdir -p /etc/nginx/templates \
-    && mv /tmp/assets/nginx.conf.template /etc/nginx/templates/default.conf.template;
+    && mv nginx.conf.template /etc/nginx/templates/default.conf.template;
 
 
 # Configure supervisord
-RUN mv /tmp/assets/supervisord.web.conf /etc/supervisor/conf.d/web.conf
-RUN mv /tmp/assets/*.sh /opt/
+RUN mv supervisord.web.conf /etc/supervisor/conf.d/web.conf
 
 # Declare ports in use
 EXPOSE 80 8080
 
 VOLUME [ "/var/spool/apt-mirror" ]
 
-ENTRYPOINT [ "/opt/entrypoint.sh" ]
+ENTRYPOINT [ "/apt-mirror/entrypoint.sh" ]
 
 # Start supervisord when container starts
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
