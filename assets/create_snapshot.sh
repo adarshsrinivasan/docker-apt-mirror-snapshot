@@ -48,12 +48,6 @@ create_snapshot() {
 }
 
 update_mirror() {
-    echo "Updating mirror..."
-    apt-mirror
-    if [ $? -ne 0 ]; then
-        echo "Error updating mirror. Exiting."
-        exit 1
-    fi
     prepare_snapshot
     create_snapshot
     echo "Mirror updated successfully."
