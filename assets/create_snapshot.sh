@@ -42,7 +42,9 @@ create_snapshot() {
             fi
         done
     done
-    ln -sf "$SNAPSHOT_PATH/$target/$TIMESTAMP" "$SNAPSHOT_PATH/$target/latest"
+    for target in "${TARGET_REPOS[@]}"; do
+        ln -sf "$SNAPSHOT_PATH/$target/$TIMESTAMP" "$SNAPSHOT_PATH/$target/latest"
+    done
 }
 
 update_mirror() {
