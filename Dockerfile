@@ -30,11 +30,15 @@ fi" >> /etc/bash.bashrc;
 COPY [ "assets", "/tmp/assets" ]
 
 # Configure apt-mirror
-RUN set -eux; \
- apt -y --no-install-recommends install apt-mirror \
- && rm -rf /var/lib/apt/lists/* /var/tmp/* \
- && mv /etc/apt/mirror.list /etc/apt/mirror.list.default \
- && mv /tmp/assets/mirror.list /etc/apt/mirror.list
+
+RUN install -m 755 -D /tmp/assets/apt-mirror /usr/local/bin/apt-mirror \
+    && mkdir -p /usr/local/share/man/man1/ \
+	&& pod2man apt-mirror > /usr/local/share/man/man1/apt-mirror.1 \
+	&& mkdir -p /var/spool/apt-mirror/mirror \
+	&& mkdir -p /var/spool/apt-mirror/skel \
+	&& mkdir -p /var/spool/apt-mirror/var \
+    && mkdir -p /etc/apt/ \
+    && mv /tmp/assets/mirror.list /etc/apt/mirror.list
 
 # Configure Nginx
 RUN  set -eux; \

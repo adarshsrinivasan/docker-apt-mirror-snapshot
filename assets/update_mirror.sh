@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Set the base path
+BASE_PATH="/var/spool/apt-mirror"
+MIRROR_SRC_PATH="$BASE_PATH/mirror"
+SNAPSHOT_PATH="$BASE_PATH/snapshot"
+TIMESTAMP=$(date -u +%Y%m%dT%H%M%SZ)
+
+# List of target repos names
+TARGET_REPOS=("debian" "debian-security")
+
+# List of subdirectories of each repo
+SUB_DIRS=("dists" "pool")
+
+prepare_snapshot() {
+    echo "Preparing snapshot directory..."
+    for target in "${TARGET_REPOS[@]}"; do
+        if [ -d "$base_src$target" ]; then
+            for sub_dir in "${SUB_DIRS[@]}"; do
+                mkdir -p "$SNAPSHOT_PATH/$target/$TIMESTAMP/$sub_dir"
+            done
+        fi
+    done
+}
+
+create_snapshot() {
+    # Loop through each immediate subdirectory under the base path
+    for base_src in "$MIRROR_SRC_PATH"/*/; do
+        [ -d "$base_src" ] || continue
+
+        for target in "${TARGET_REPOS[@]}"; do
+            if [ -d "$base_src$target" ]; then
+                
+            else
+                echo "  ✘ Missing: $target"
+            fi
+        done
+    done
+}
+
+
+
