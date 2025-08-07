@@ -31,6 +31,22 @@ deb-armhf http://deb.debian.org/debian bookworm-backports main contrib non-free 
 deb-amd64 http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
 deb-arm64 http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
 deb-armhf http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+
+deb-src-amd64 http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+deb-src-arm64 http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+deb-src-armhf http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+
+deb-src-amd64 http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
+deb-src-arm64 http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
+deb-src-armhf http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
+
+deb-src-amd64 http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware
+deb-src-arm64 http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware
+deb-src-armhf http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware
+
+deb-src-amd64 http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+deb-src-arm64 http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+deb-src-armhf http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
 ############# bookworm end ###############
 
 ############# trixie start ###############
@@ -49,6 +65,22 @@ deb-armhf http://deb.debian.org/debian trixie-backports main contrib non-free no
 deb-amd64 http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
 deb-arm64 http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
 deb-armhf http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+
+deb-src-amd64 http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
+deb-src-arm64 http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
+deb-src-armhf http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
+
+deb-src-amd64 http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware
+deb-src-arm64 http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware
+deb-src-armhf http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware
+
+deb-src-amd64 http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
+deb-src-arm64 http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
+deb-src-armhf http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
+
+deb-src-amd64 http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+deb-src-arm64 http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+deb-src-armhf http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
 ############# trixie end ###############
 
 ############# bullseye start ###############
@@ -67,6 +99,22 @@ deb-armhf http://archive.debian.org/debian bullseye-backports main contrib non-f
 deb-amd64 http://security.debian.org/debian-security bullseye-security main contrib non-free
 deb-arm64 http://security.debian.org/debian-security bullseye-security main contrib non-free
 deb-armhf http://security.debian.org/debian-security bullseye-security main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian bullseye main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian bullseye main contrib non-free
+deb-src-armhf http://archive.debian.org/debian bullseye main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian bullseye-updates main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian bullseye-updates main contrib non-free
+deb-src-armhf http://archive.debian.org/debian bullseye-updates main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian bullseye-backports main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian bullseye-backports main contrib non-free
+deb-src-armhf http://archive.debian.org/debian bullseye-backports main contrib non-free
+
+deb-src-amd64 http://security.debian.org/debian-security bullseye-security main contrib non-free
+deb-src-arm64 http://security.debian.org/debian-security bullseye-security main contrib non-free
+deb-src-armhf http://security.debian.org/debian-security bullseye-security main contrib non-free
 ############# bullseye end ###############
 
 ############# buster start ###############
@@ -85,6 +133,22 @@ deb-armhf http://archive.debian.org/debian buster-backports main contrib non-fre
 deb-amd64 http://archive.debian.org/debian-security buster/updates main contrib non-free
 deb-arm64 http://archive.debian.org/debian-security buster/updates main contrib non-free
 deb-armhf http://archive.debian.org/debian-security buster/updates main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian buster main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian buster main contrib non-free
+deb-src-armhf http://archive.debian.org/debian buster main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian buster-updates main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian buster-updates main contrib non-free
+deb-src-armhf http://archive.debian.org/debian buster-updates main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian buster-backports main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian buster-backports main contrib non-free
+deb-src-armhf http://archive.debian.org/debian buster-backports main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian-security buster/updates main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian-security buster/updates main contrib non-free
+deb-src-armhf http://archive.debian.org/debian-security buster/updates main contrib non-free
 ############# buster end ###############
 
 ############# jessie start ###############
@@ -95,6 +159,14 @@ deb-armhf http://archive.debian.org/debian jessie main contrib non-free
 deb-amd64 http://archive.debian.org/debian jessie-backports main contrib non-free
 deb-arm64 http://archive.debian.org/debian jessie-backports main contrib non-free
 deb-armhf http://archive.debian.org/debian jessie-backports main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian jessie main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian jessie main contrib non-free
+deb-src-armhf http://archive.debian.org/debian jessie main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian jessie-backports main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian jessie-backports main contrib non-free
+deb-src-armhf http://archive.debian.org/debian jessie-backports main contrib non-free
 ############# jessie end ###############
 
 ############# stretch start ###############
@@ -109,6 +181,18 @@ deb-armhf http://archive.debian.org/debian stretch-backports main contrib non-fr
 deb-amd64 http://archive.debian.org/debian-security stretch/updates main contrib non-free
 deb-arm64 http://archive.debian.org/debian-security stretch/updates main contrib non-free
 deb-armhf http://archive.debian.org/debian-security stretch/updates main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian stretch main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian stretch main contrib non-free
+deb-src-armhf http://archive.debian.org/debian stretch main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian stretch-backports main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian stretch-backports main contrib non-free
+deb-src-armhf http://archive.debian.org/debian stretch-backports main contrib non-free
+
+deb-src-amd64 http://archive.debian.org/debian-security stretch/updates main contrib non-free
+deb-src-arm64 http://archive.debian.org/debian-security stretch/updates main contrib non-free
+deb-src-armhf http://archive.debian.org/debian-security stretch/updates main contrib non-free
 ############# stretch end ###############
 
 clean http://deb.debian.org/debian
