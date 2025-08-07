@@ -3,7 +3,7 @@ set base_path         /var/spool/apt-mirror
 set mirror_path       $base_path/mirror
 set skel_path         $base_path/skel
 set var_path          $base_path/var
-set postmirror_script $var_path/postmirror.sh
+set postmirror_script /apt-mirror/postmirror.sh
 set defaultarch       amd64
 # set run_postmirror    0
 set nthreads          20

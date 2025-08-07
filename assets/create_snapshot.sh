@@ -6,6 +6,8 @@
 # Usage: ./update_mirror.sh
 # The script assumes that the apt-mirror is already configured and the necessary directories exist.   
 
+set -e
+set -x
 # Set the base path
 BASE_PATH="/var/spool/apt-mirror"
 MIRROR_SRC_PATH="$BASE_PATH/mirror"
