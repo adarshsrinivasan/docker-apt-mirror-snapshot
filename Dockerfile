@@ -17,7 +17,11 @@ RUN set -eux; \
     nano \
     gettext-base \
     xz-utils \
-    rng-tools; \
+    rng-tools \
+    gcc \
+    make \
+    perl \
+    rsync; \
   apt clean && apt autoclean && apt autoremove; \
   echo "if ! shopt -oq posix; then\n\
   if [ -f /usr/share/bash-completion/bash_completion ]; then\n\
