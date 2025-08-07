@@ -43,7 +43,7 @@ create_snapshot() {
         done
     done
     for target in "${TARGET_REPOS[@]}"; do
-        ln -sf "$SNAPSHOT_PATH/$target/$TIMESTAMP" "$SNAPSHOT_PATH/$target/latest"
+        ln -sfn "$SNAPSHOT_PATH/$target/$TIMESTAMP" "$SNAPSHOT_PATH/$target/latest"
     done
 }
 
@@ -62,5 +62,3 @@ main () {
     update_mirror
 }
 main "$@"
-
-
