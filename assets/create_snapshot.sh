@@ -43,6 +43,8 @@ create_snapshot() {
         done
     done
     for target in "${TARGET_REPOS[@]}"; do
+        echo "$TIMESTAMP" > "$SNAPSHOT_PATH/$target/$TIMESTAMP/timestamp"
+        echo "$TIMESTAMP" >> "$SNAPSHOT_PATH/$target/timestamps"
         ln -sfn "$SNAPSHOT_PATH/$target/$TIMESTAMP" "$SNAPSHOT_PATH/$target/latest"
     done
 }
